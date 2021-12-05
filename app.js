@@ -1,3 +1,16 @@
+const express = require("express")
+const app = express()
+
+const port = process.env.PORT || 3000
+
+app.get('/',function(req, res) {
+    res.sendFile(__dirname + './index.html')
+})
+
+app.listen(port, function () {
+    console.log("Server is running on port "+ port);
+});
+
 ///////////////Discord.js///////////////
 const DiscordJS = require('discord.js');
 const { Client, Intents, MessageEmbed, MessageActionRow, MessageButton } = DiscordJS;
