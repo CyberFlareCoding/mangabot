@@ -14,7 +14,8 @@ app.listen(port, function () {
 ///////////////Discord.js///////////////
 const DiscordJS = require('discord.js');
 const { Client, Intents, MessageEmbed, MessageActionRow, MessageButton } = DiscordJS;
-const { TOKEN, PREFIX } = require('./config.json') || process.env;
+const PREFIX = process.env.PREFIX ||require('./config.json').PREFIX;
+const TOKEN = process.env.TOKEN ||require('./config.json').TOKEN;
 
 const client = new Client({
     intents:[
@@ -42,7 +43,7 @@ const nhentai = require('nhentai');
 const api = new nhentai.API();
 
 ///////////////MongoDB///////////////
-const { MongoURI } = require("./config.json") || process.env;
+const MongoURI = process.env.MongoURI || require("./config.json").MongoURI;
 const { MongoClient } = require('mongodb');
 const MDBclient = new MongoClient(MongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
