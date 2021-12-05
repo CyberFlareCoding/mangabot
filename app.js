@@ -8,8 +8,7 @@ app.get('/',function(req, res) {
 })
 
 app.listen(port, function () {
-    console.log("Server is running on port "+ port);
-});
+    
 
 ///////////////Discord.js///////////////
 const DiscordJS = require('discord.js');
@@ -340,3 +339,6 @@ client.on('interactionCreate', async (interaction)=>{
 })
 
 client.login(TOKEN);
+    
+    console.log("Server is running on port "+ port);
+});
